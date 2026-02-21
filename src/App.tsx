@@ -73,26 +73,6 @@ export default function App() {
         }
         setMenuColumn(null)
     }
-
-    function handleSort(colum: string) {
-        if(sortBy !== colum) {
-            setSortBy(colum);
-            setOrder("asc");
-            return;
-        }
-        if (order === "asc"){
-            setOrder("desc");
-            return;
-        }
-        if (order === "desc"){
-            setSortBy(null);
-            setOrder(null);
-            return;
-        }
-
-        setOrder("asc")
-    }
-
     return (
         <div style={{ padding: 20, fontFamily: "Arial" }}>
             <h1>Users (API)</h1>
@@ -244,7 +224,7 @@ export default function App() {
 
                     {selectedUser &&(
                         <div
-                            onClick={() => selectedUser(null)}
+                            onClick={() => setSelectedUser(null)}
                             style={{
                                 position: "fixed",
                                 inset: 0,
